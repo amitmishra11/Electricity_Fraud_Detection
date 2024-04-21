@@ -200,9 +200,9 @@ def convolutional_neural_network_2D(X_train, X_test, y_train, y_test):
 X_train, X_test, y_train, y_test = read_data()
 
 
-# random_forest(X_train, X_test, y_train, y_test)
-# logistic_regression(X_train, X_test, y_train, y_test)
-# decision_tree(X_train, X_test, y_train, y_test)
-# artificial_neural_network_(X_train, X_test, y_train, y_test)
-# convolutional_neural_network_1D(X_train, X_test, y_train, y_test)
-# convolutional_neural_network_2D(X_train, X_test, y_train, y_test)
+random_forest(X_train, X_test, y_train, y_test)
+logistic_regression(X_train, X_test, y_train, y_test)
+decision_tree(X_train, X_test, y_train, y_test)
+artificial_neural_network_(X_train, X_test, y_train, y_test)
+convolutional_neural_network_1D(X_train, X_test, y_train, y_test)
+convolutional_neural_network_2D(X_train, X_test, y_train, y_test)
