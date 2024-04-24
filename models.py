@@ -121,33 +121,33 @@ def artificial_neural_network_(X_train, X_test, y_train, y_test):
     results(y_test, prediction, "ANN")
 
 
-def convolutional_neural_network_1D(X_train, X_test, y_train, y_test):
-    print('1D - Convolutional Neural Network:')
+# def convolutional_neural_network_1D(X_train, X_test, y_train, y_test):
+#     print('1D - Convolutional Neural Network:')
 
-    # Transforming the dataset into tensors
-    X_train = X_train.to_numpy().reshape(X_train.shape[0], X_train.shape[1], 1)
-    X_test = X_test.to_numpy().reshape(X_test.shape[0], X_test.shape[1], 1)
+#     # Transforming the dataset into tensors
+#     X_train = X_train.to_numpy().reshape(X_train.shape[0], X_train.shape[1], 1)
+#     X_test = X_test.to_numpy().reshape(X_test.shape[0], X_test.shape[1], 1)
 
-    # Model creation
-    model = Sequential()
-    model.add(Conv1D(100, kernel_size=7, input_shape=(1034, 1), activation='relu'))
-    model.add(MaxPooling1D(pool_size=7))
-    model.add(Flatten())
-    model.add(Dense(100, activation='relu'))
-    model.add(Dense(100, activation='relu'))
-    model.add(Dense(64, activation='relu'))
-    model.add(Dense(1, activation='sigmoid'))
+#     # Model creation
+#     model = Sequential()
+#     model.add(Conv1D(100, kernel_size=7, input_shape=(1034, 1), activation='relu'))
+#     model.add(MaxPooling1D(pool_size=7))
+#     model.add(Flatten())
+#     model.add(Dense(100, activation='relu'))
+#     model.add(Dense(100, activation='relu'))
+#     model.add(Dense(64, activation='relu'))
+#     model.add(Dense(1, activation='sigmoid'))
 
-    model.compile(loss=keras.losses.binary_crossentropy,
-                  optimizer='adam',
-                  metrics=['accuracy'])
+#     model.compile(loss=keras.losses.binary_crossentropy,
+#                   optimizer='adam',
+#                   metrics=['accuracy'])
 
-    # model.fit(X_train, y_train, epochs=1, validation_split=0.1, shuffle=False, verbose=1)
-    model.fit(X_train, y_train, epochs=epochs_number, validation_split=0, shuffle=False, verbose=1)
-    # prediction = model.predict_step(X_test)
-    prediction = (model.predict(X_test) > 0.5).astype("int32")
-    model.summary()
-    results(y_test, prediction, "CNN 1D")
+#     # model.fit(X_train, y_train, epochs=1, validation_split=0.1, shuffle=False, verbose=1)
+#     model.fit(X_train, y_train, epochs=epochs_number, validation_split=0, shuffle=False, verbose=1)
+#     # prediction = model.predict_step(X_test)
+#     prediction = (model.predict(X_test) > 0.5).astype("int32")
+#     model.summary()
+#     results(y_test, prediction, "CNN 1D")
 
 
 def convolutional_neural_network_2D(X_train, X_test, y_train, y_test):
@@ -204,5 +204,5 @@ random_forest(X_train, X_test, y_train, y_test)
 logistic_regression(X_train, X_test, y_train, y_test)
 decision_tree(X_train, X_test, y_train, y_test)
 artificial_neural_network_(X_train, X_test, y_train, y_test)
-convolutional_neural_network_1D(X_train, X_test, y_train, y_test)
-convolutional_neural_network_2D(X_train, X_test, y_train, y_test)
+# convolutional_neural_network_1D(X_train, X_test, y_train, y_test)
+# convolutional_neural_network_2D(X_train, X_test, y_train, y_test)
